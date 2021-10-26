@@ -1,5 +1,6 @@
 # devops-netology
 new line
+
 second line (after `git add`)
 
 ---
