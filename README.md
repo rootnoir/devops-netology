@@ -25,3 +25,6 @@ second line (after `git add`)
 `.terraformrc` - игнорируются все файлы с именем .terraformrc
 
 `terraform.rc` - игнорируются все файлы с именем terraform.rc
+
+one more new line
+
