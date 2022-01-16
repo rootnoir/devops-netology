@@ -349,6 +349,7 @@ root@vagrant:~# cat <<EOF > /root/nginx_cert_renew.sh
 #! /usr/bin/env bash
 
 export VAULT_SKIP_VERIFY=true
+vault login s.x04mjRtFvzMS9zkwIgRRCURa
 vault write -format=json pki_int/issue/mytest common_name="site.mytest.local" ttl="744h" > /etc/nginx/cert/site.pem.json
 cat /etc/nginx/cert/site.pem.json | jq -r '.data.private_key' > /etc/nginx/cert/site-key.pem
 cat /etc/nginx/cert/site.pem.json | jq -r '.data.certificate' > /etc/nginx/cert/site.pem
