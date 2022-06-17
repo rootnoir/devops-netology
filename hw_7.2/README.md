@@ -327,6 +327,39 @@ Note: You didn't use the -out option to save this plan, so Terraform can't guara
 
 ```
 
+```shell
+root@vagrant:~/terraform# terraform apply
+<...>
+  Пропущен вывод повторяющий terraform plan
+<...>
+
+  Enter a value: yes
+
+yandex_vpc_network.network-1: Creating...
+yandex_vpc_network.network-1: Creation complete after 1s [id=enpo6hue49hg5ir30lau]
+yandex_vpc_subnet.subnet-1: Creating...
+yandex_vpc_subnet.subnet-1: Creation complete after 1s [id=e9bglc3oge86g471d4ls]
+yandex_compute_instance.vm-1: Creating...
+yandex_compute_instance.vm-2: Creating...
+yandex_compute_instance.vm-1: Still creating... [10s elapsed]
+yandex_compute_instance.vm-2: Still creating... [10s elapsed]
+yandex_compute_instance.vm-1: Still creating... [20s elapsed]
+yandex_compute_instance.vm-2: Still creating... [20s elapsed]
+yandex_compute_instance.vm-2: Creation complete after 22s [id=fhmk3it8f8merq5h2ntc]
+yandex_compute_instance.vm-1: Creation complete after 22s [id=fhm4u5ng0m1jtr6h82bv]
+
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+external_ip_address_vm_1 = "51.250.87.201"
+external_ip_address_vm_2 = "51.250.79.204"
+internal_ip_address_vm_1 = "192.168.10.15"
+internal_ip_address_vm_2 = "192.168.10.23"
+zone-vm1 = "ru-central1-a"
+zone-vm2 = "ru-central1-a"
+
+```
 В качестве результата задания предоставьте:
 1. Ответ на вопрос: при помощи какого инструмента (из разобранных на прошлом занятии) можно создать свой образ ami?
    - Ответ: `Packer`
