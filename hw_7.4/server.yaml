@@ -1,0 +1,18 @@
+---
+repos:
+- id: github.com/rootnoir/terraform_atlantis
+  branch: /.*/
+  apply_requirements: [approved, mergeable]
+
+  # allow_custom_workflows defines whether this repo can define its own
+  # workflows. If false (default), the repo can only use server-side defined
+  # workflows.
+  allow_custom_workflows: true
+
+  workflows:
+  default:
+    plan:
+      steps:
+        - init
+        - plan:
+            extra_args: ["-lock", "false"]
